@@ -327,7 +327,7 @@ describe('job', () => {
        
 
          
-    it ('itt should return status 200 if the job successfully updates', async () => {
+    it ('itt should return status 302 if the job successfully updates', async () => {
         await request(server)
             .post('/api/job')
             .send(validJob)
@@ -346,13 +346,13 @@ describe('job', () => {
             CompanyName:"MTM"})
             .set({Accpet: "Application/json"})
            
-            expect(response.status).toBe(200)
+            expect(response.status).toBe(302)
         })
     })
 
     describe("DELETE /api/job/:id", () => { 
 
-        it("should  return status 200 if the job is deleted successfully", async () => {
+        it("should  return status 302 if the job is deleted successfully", async () => {
 
             await request(server)
             .post('/api/job')
@@ -366,8 +366,8 @@ describe('job', () => {
                 .delete(`/api/job/${id}`)
                 .set({Accpet: "Application/json"})
                 //console.log(response.body)
-                expect(response.status).toBe(200)
-                expect(response.body).toMatchObject({message: "Job deleted"})
+                expect(response.status).toBe(302)
+                
         })
         
         it("should return status 404 if can not found job with id", async()=>{

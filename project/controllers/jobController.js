@@ -95,9 +95,9 @@ exports.update = (req, res)=>{
             if(!data){
                 return res.status(404).send({ message : `Cannot Update job with ${id}. Maybe job not found!`})
             }else{
-                return res.status(200).send({ message : 'Update Job!'})
+                //return res.status(200).send({ message : 'Update Job!'})
                 //console.log(data)
-                //res.redirect('/list-job')
+                return res.redirect('/list-job')
             }
         })
         .catch(err =>{
@@ -114,8 +114,8 @@ exports.delete = async (req, res)=>{
             if(!delete_job)
                return  res.status(404).send({ message : `Cannot Delete with id Maybe id is not found`})
             
-            //res.redirect('/list-job')
-            res.status(200).send({message : "Job deleted"})
+            res.redirect('/list-job')
+             //res.status(200).send({message : "Job deleted"})
     }catch { err =>{
         return  res.status(500).send({ err, message : `Erro`})
   
