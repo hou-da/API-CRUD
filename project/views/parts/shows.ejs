@@ -1,0 +1,22 @@
+
+<% if(typeof jobs !=='undefined') { %>
+    <% for(var i = 0;  i < jobs.length; i++) { %>
+        <tr>
+            <td><%= i + 1 %></td>
+            <td><%= jobs[i].Title %></td>
+            <td><%= jobs[i].Description %></td>
+            <td><%= jobs[i].location %></td>
+            <td><%= jobs[i].Salary %></td>
+            <td><%= jobs[i].CompanyName%></td>
+            <td>
+                <a href="/update-job?id=<%= jobs[i]._id%>" class="btn border-shadow update">
+                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                </a>
+                
+                <a href="/delete/<%= jobs[i]._id%>"  class="btn border-shadow delete" >
+                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                </a>
+            </td>
+        </tr>
+    <%}%>
+<%}%>

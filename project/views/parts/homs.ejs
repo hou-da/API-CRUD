@@ -1,0 +1,15 @@
+
+<% if(typeof jobs !=='undefined') {%>
+    <% for(var i = 0; i < jobs.length; i++) { %>
+       
+    <div class="card">
+      <h3 class="card-header"><%=jobs[i].Title%> </h3>
+      <div class="card-body">
+        <h5 class="card-title"><%= jobs[i].CompanyName%></h5>
+        <p class="card-text"><%=jobs[i].location%>.</p>
+        <a href="/info-job" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <%}%>
+        <%}%>
+  
